@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\User;
+use App\Models\Post;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,3 +34,8 @@ Route::controller(PostController::class)->group(function () {
     Route::get('/posts/{post}', 'show');
     Route::post('/posts/', 'store');
 });
+
+// Forced Scoped Bindings
+Route::get('/users/{user}/posts/{post}', function (User $user, Post $post) {
+    return $post;
+})->scopeBindings();
