@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     // return str('hello world')->upper();
+    throw new \Exception('Whoops');
     return view('welcome');
 })->name('home');
 
