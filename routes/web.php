@@ -15,8 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return Blade::render('{{ $greeting }}, World', ['greeting' => 'Hello']);
     // return str('hello world')->upper();
-    throw new \Exception('Whoops');
+    // throw new \Exception('Whoops');
     return view('welcome');
 })->name('home');
 
