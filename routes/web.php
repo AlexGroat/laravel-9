@@ -15,7 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    // return str('hello world')->upper();
     return view('welcome');
+})->name('home');
+
+Route::get('/endpoint', function () {
+    return to_route('home');
+    // return redirect()->route('home');
 });
 
 // Route Controller Grouping
